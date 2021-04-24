@@ -20,7 +20,12 @@ nav, .container{
 
 .input-text, .textarea{
     padding: 2%;
+    width:100%;
     margin-bottom: 5%;
+}
+
+p{
+    font-weight: bold;
 }
 
 .input-text, .textarea, .button{

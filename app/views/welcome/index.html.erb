@@ -87,8 +87,11 @@
     <div class="apresentation-form">
         <h1><a name="apresentation-form"></a> Cadastre um personagem do Felipe</h1>
             <%= form_for :personagem, url:personagems_path do |f|%>
+                <p>Insira o nome do personagem:</p>
                 <%= f.text_field :title, placeholder: "Insira o nome do personagem", class:'input-text' %>
+                    <p>Insira a descrição do personagem:</p>
                 <%= f.text_area :about, placeholder:"Insira uma breve descrição do personagem",  class:'textarea'  %>
+                    <p>Insira o seu nome:</p>
                 <%= f.text_field :author, placeholder:"Insira o seu nome", class:'input-text'%>
                 <%= notice %>
                 <%= submit_tag "Cadastrar",  class: 'button'%>

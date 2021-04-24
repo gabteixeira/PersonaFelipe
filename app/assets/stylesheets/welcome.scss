@@ -45,7 +45,9 @@ nav, .container{
 .container{
     border-radius: 5px;
     margin: 3% 5% 0% 5%;
+    max-width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding: 1%;
 }
 
@@ -67,10 +69,15 @@ nav, .container{
 
 .card h3, .card h4, .card h5{
     margin: 0;
+    line-height: 100%
 }
 
 .apresentation, .apresentation-personas, .apresentation-ranking{
-    margin-left: 5%;
+    margin-left: 3%;
+}
+
+.apresentation-personas h1, .apresentation-ranking h1, .apresentation-form h1{
+    line-height: 100%
 }
 
 .apresentation{
@@ -79,11 +86,12 @@ nav, .container{
 
 .apresentation h1{
     font-size: 3.3em;
+    line-height: 100%
 }
 
 .apresentation div{
     text-align: justify;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 .button{
@@ -139,4 +147,9 @@ a:hover, a:visited:hover{
     padding: 15px;
     font-weight: 900;
     font-size: 1.1em;
+}
+
+.column{
+    width: 100%;
+    flex-direction: column;
 }

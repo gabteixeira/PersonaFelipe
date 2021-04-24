@@ -10,7 +10,13 @@
     <%= image_tag("background.jpg", :alt => "", size:"100x100") %>
     <div class="apresentation-personas">
         <h1><a name="apresentation-personas"></a> Personagens catalogados </h1>
-        <h3>Até o momento temos <%= @personagems.length %> personagens catalogados</h3>
+        <h3>Até o momento temos <%= @personagems.length %> 
+        <% if @personagems.length > 1 or @personagems.length == 0 %>
+        personagens catalogados.
+    <%else%>
+        personagem catalogado
+    <%end%>
+    </h3>
         <p><%= notice %><p>
         <div class="persona-list flex-wrap">
             <% @personagems.each do |personagem| %>

@@ -1,0 +1,97 @@
+<nav class="flex-wrap">
+    <div class="logo">
+        <%= image_tag("logo.png", :alt => "Personas Felipe", size:"150x20") %>
+    </div>
+    <ul class="menu flex-wrap">
+        <li><a href="#apresentation">INÍCIO</a></li>
+        <li><a href="#apresentation-personas">PERSONAGENS</a></li>
+        <li><a href="#apresentation-ranking">COLABORADORES</a></li>
+        <li><a href="#apresentation-form">CONTRIBUA</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <%= image_tag("mask.png", :alt => "", size:"100x100") %>
+    <div class="apresentation">
+        <h1><a name="apresentation"></a> Personas Felipe</h1>
+        <div>
+            Como bem sabemos, o nosso amigo <b>Felipe</b> costuma manifestar diariamente diversos personagens. <br><br>
+            Diante disso, necessitamos da sua ajuda para catalogar todos esses personagens desse amado membro.
+        </div>
+        <a href="#apresentation-form"><button class="button">Contribua já!</button></a>
+    </div>
+    <%= image_tag("abc.png", :alt => "Personas Felipe", size:"500x500", style:"margin-top:2%") %>
+</div>
+
+<div class="container">
+    <%= image_tag("background.jpg", :alt => "", size:"100x100") %>
+    <div class="apresentation-personas">
+        
+        <h1><a name="apresentation-personas"></a> Últimos personagens catalogados </h1>
+        <h3>Até o momento temos <%= @personagems.length %> personagens catalogados.</h3>
+        <% if @personagems.length > 3 %>
+            <h3>Mostrando apenas os 3 últimos personagens. Clique em "Ver todos" para ver o restante</h3>
+        <%end%>
+        
+        <div class="persona-list flex-wrap">
+            <% @personagems.take(3).each do |personagem| %>
+                <div class="card">
+                    <h2><%= personagem.title %></h2>
+                    <h3>Personagem de número #<%= personagem.id %></h3>
+                    <p><%= personagem.about %></p>
+                    <h4>Inserido por: <%= personagem.author %></h4>
+                    <h5><%= personagem.created_at.strftime("%d/%m/%y - %H:%M")%></h5>
+                </div>
+            <% end %>
+        </div>
+
+        <%= button_to "Ver todos", {:action => "todosPersonagens"}, :method => :get, class: 'button'%>
+    </div>
+</div>
+
+<div class="container">
+    <%= image_tag("trophy.png", :alt => "", size:"100x100") %>
+    <div class="apresentation-ranking">
+        <h1><a name="apresentation-ranking"></a> Ranking dos Colaboradores</h1>
+        <h3>Até o momento temos <%= @colaborators.length %> colaboradores. 
+                <% if @colaborators.length > 3 %>
+                    Clique em "Ver todos" para ver o restante.
+                <%end%>
+        </h3>
+    
+        <div class="ranking">
+            <% @colaborators.take(3).each_with_index do |colaborator,i| %>
+                <div class="card-ranking flex-wrap">
+                    <div class="ranking-text">
+
+                        <h3><%= colaborator[0] %> - <%= colaborator[1] %> 
+                            <% if colaborator[1] > 1 %>
+                                colaborações 
+                            <%else%>
+                                colaboração
+                            <% end %>
+                        </h3>
+
+                    </div>
+                        <div class="indicator-<%=i%>"></div>
+                </div>
+            <%end%>
+        </div>
+    
+        <%= button_to "Ver todos", {:action => "todos"}, :method => :get, class: 'button'%>
+    </div>
+</div>
+
+<div class="container">
+    <%= image_tag("note.png", :alt => "", size:"100x100") %>
+    <div class="apresentation-form">
+        <h1><a name="apresentation-form"></a> Cadastre um personagem do Felipe</h1>
+            <%= form_for :personagem, url:personagems_path do |f|%>
+                <%= f.text_field :title, placeholder: "Insira o nome do personagem", class:'input-text' %>
+                <%= f.text_area :about, placeholder:"Insira uma breve descrição do personagem",  class:'textarea'  %>
+                <%= f.text_field :author, placeholder:"Insira o seu nome", class:'input-text'%>
+                <%= notice %>
+                <%= submit_tag "Cadastrar",  class: 'button'%>
+            <% end %>
+    </div>
+</div>

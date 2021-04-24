@@ -1,0 +1,142 @@
+body{
+    background-color: #FFFFED;
+    margin:0 0 2%;
+}
+
+nav, .container{
+    background: linear-gradient(90deg, rgba(123,174,224,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.back:hover{
+    background-color: transparent;
+}
+
+.apresentation-form, .apresentation-form form, .apresentation-form h1{
+    margin-left: 4%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text, .textarea{
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.input-text, .textarea, .button{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.logo, .logo-center{
+    background-color: white;
+    padding: 10px;
+}
+
+.logo{
+    margin-left: 1%;
+    align-self: center;
+}
+
+.logo-center{
+    margin: 0 auto; 
+}
+
+.container{
+    border-radius: 5px;
+    margin: 3% 5% 0% 5%;
+    display: flex;
+    padding: 1%;
+}
+
+.persona-list{
+    max-width: 80%;
+}
+
+.card, .card-ranking{
+    padding: 5%;
+    margin-top: 5%;
+    min-width: 60%;
+    background-color: white;
+}
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card h3, .card h4, .card h5{
+    margin: 0;
+}
+
+.apresentation, .apresentation-personas, .apresentation-ranking{
+    margin-left: 5%;
+}
+
+.apresentation{
+    margin: 15% 10% 0 0;
+}
+
+.apresentation h1{
+    font-size: 3.3em;
+}
+
+.apresentation div{
+    text-align: justify;
+    font-size: 1.4em;
+}
+
+.button{
+    padding: 1%;
+    min-width: 30%;
+    font-weight: bold;
+    margin-top: 10%;
+    background-color: #7A77ED;
+}
+
+.button:hover{
+    background-color: white;
+    color:#7A77ED;
+}
+
+.menu{
+    margin-left: 35%;
+    display: flex;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover, a:visited:hover{
+    background-color: black;
+    color:white;
+}
+
+.indicator-0,.indicator-1,.indicator-2{
+    margin-left: 2%;
+    flex:1
+}
+
+.indicator-0{
+    background-color: gold;
+}
+
+.indicator-1{
+    background-color: silver;
+}
+
+.indicator-2{
+    background-color: #cd7f32;
+}
+
+.menu li{
+    padding: 15px;
+    font-weight: 900;
+    font-size: 1.1em;
+}

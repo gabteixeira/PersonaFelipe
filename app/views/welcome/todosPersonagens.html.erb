@@ -1,0 +1,27 @@
+<nav class="flex-wrap">
+    <%= link_to image_tag("back.jpg", :alt=>"Voltar", size:"50x50"), url_for(:back), class:"back" %>
+    <div class="logo-center">
+        <%= image_tag("logo.png", :alt => "Personas Felipe", size:"150x20") %>
+    </div>
+</nav>
+
+
+<div class="container">
+    <%= image_tag("background.jpg", :alt => "", size:"100x100") %>
+    <div class="apresentation-personas">
+        <h1><a name="apresentation-personas"></a> Personagens catalogados </h1>
+        <h3>Até o momento temos <%= @personagems.length %> personagens catalogados</h3>
+        <p><%= notice %><p>
+        <div class="persona-list flex-wrap">
+            <% @personagems.each do |personagem| %>
+                <div class="card">
+                    <h2><%= personagem.title %></h2>
+                    <h3>Personagem de número #<%= personagem.id %></h3>
+                    <p><%= personagem.about %></p>
+                    <h4>Inserido por: <%= personagem.author %></h4>
+                    <h5><%= personagem.created_at.strftime("%d/%m/%y - %H:%M")%></h5>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

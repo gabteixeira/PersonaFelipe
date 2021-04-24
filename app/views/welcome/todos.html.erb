@@ -1,0 +1,30 @@
+<nav class="flex-wrap">
+    <%= link_to image_tag("back.jpg", :alt=>"Voltar", size:"50x50"), url_for(:back), class:'back' %>
+    <div class="logo-center">
+        <%= image_tag("logo.png", :alt => "Personas Felipe", size:"150x20") %>
+    </div>
+</nav>
+
+<div class="container">
+    <%= image_tag("trophy.png", :alt => "", size:"100x100") %>
+    <div class="apresentation-ranking">
+        <h1><a name="apresentation-ranking"></a> Ranking dos Colaboradores</h1>
+        <h3>Até o momento temos <%= @colaborators.length %> colaboradores.</h3>
+        <div class="ranking">
+            <% @colaborators.each_with_index do |colaborator,i| %>
+                <div class="card-ranking flex-wrap">
+                    <div class="ranking-text">
+                        <h3><%= colaborator[0] %> - <%= colaborator[1] %> 
+                        <% if colaborator[1] > 1 %>
+                            colaborações 
+                        <%else%>
+                            colaboração
+                        <% end %>
+                        </h3>
+                    </div>
+                    <div class="indicator-<%=i%>"></div>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>

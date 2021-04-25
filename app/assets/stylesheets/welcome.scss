@@ -58,19 +58,21 @@ p{
 }
 
 .persona-list{
-    max-width: 80%;
+    max-width: 90%;
+    justify-items: center;
+    justify-content: center;
+}
+
+.ranking{
+    max-width: 50%;
 }
 
 .card, .card-ranking{
-    padding: 5%;
+    padding: 2%;
     margin-top: 5%;
-    background-color: white;
-}
-
-
-.card {
     max-width: 100%;
     word-break: break-all;
+    background-color: white;
 }
 
 .flex-wrap{

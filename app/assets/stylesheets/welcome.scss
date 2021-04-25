@@ -1,6 +1,7 @@
 body{
     background-color: #FFFFED;
     margin:0 0 2%;
+    max-width: 100%;
 }
 
 nav, .container{
@@ -63,8 +64,17 @@ p{
 .card, .card-ranking{
     padding: 5%;
     margin-top: 5%;
-    min-width: 60%;
     background-color: white;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+    max-width: 50%;
+    margin-right: 10%;
+    word-break: break-all;
 }
 
 .flex-wrap{
